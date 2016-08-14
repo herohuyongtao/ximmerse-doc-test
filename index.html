@@ -96,32 +96,928 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#welcome-to-ximmerse-documentation">Welcome to Ximmerse Documentation</a></li>
+        <li class="main active"><a href="#1-release-statement">1 Release Statement</a></li>
         
-            <li><a href="#commands">Commands</a></li>
+            <li><a href="#11-foreword">1.1 Foreword</a></li>
         
-            <li><a href="#project-layout">Project layout</a></li>
+            <li><a href="#12-development-overview">1.2 Development Overview</a></li>
+        
+            <li><a href="#13-test-environment">1.3 Test Environment</a></li>
+        
+            <li><a href="#14-notes">1.4 Notes</a></li>
+        
+            <li><a href="#15-technical-support">1.5 Technical Support</a></li>
+        
+    
+        <li class="main "><a href="#2-sdk-setup">2 SDK Setup</a></li>
+        
+            <li><a href="#21-import-resource-package">2.1 Import Resource Package</a></li>
+        
+            <li><a href="#22-setup-ximmerse-sdk-under-vr-hmd-sdk">2.2 Setup Ximmerse SDK under VR HMD SDK</a></li>
+        
+            <li><a href="#23-input-setup-for-ximmerse-hardwares">2.3 Input Setup for Ximmerse Hardwares</a></li>
+        
+            <li><a href="#24-programming">2.4 Programming</a></li>
+        
+    
+        <li class="main "><a href="#3-ximmersecore-namespace">3 Ximmerse.Core Namespace</a></li>
+        
+            <li><a href="#31-overview">3.1 Overview</a></li>
+        
+            <li><a href="#32-legacy-interface">3.2 Legacy Interface</a></li>
+        
+            <li><a href="#33-x-hawk-sdk">3.3 X-Hawk SDK</a></li>
+        
+            <li><a href="#34-misc">3.4 Misc.</a></li>
+        
+    
+        <li class="main "><a href="#4-ximmersecrossinput-namespace">4 Ximmerse.CrossInput Namespace</a></li>
+        
+            <li><a href="#41-overview">4.1 Overview</a></li>
+        
+            <li><a href="#42-selected-classes-introduction">4.2 Selected Classes Introduction</a></li>
+        
+    
+        <li class="main "><a href="#5-other-namespaces">5 Other Namespaces</a></li>
+        
+    
+        <li class="main "><a href="#6-samples">6 Samples</a></li>
+        
+            <li><a href="#61-crossinputmanager-gui">6.1 CrossInputManager GUI</a></li>
+        
+            <li><a href="#62-handcontroller">6.2 HandController</a></li>
+        
+            <li><a href="#63-cardboard-test">6.3 Cardboard Test</a></li>
+        
+            <li><a href="#64-hydratoximmerse">6.4 HydraToXimmerse</a></li>
+        
+    
+        <li class="main "><a href="#72-build-apk">7.2 Build APK</a></li>
+        
+    
+        <li class="main "><a href="#81-hardware-requirement">8.1 Hardware Requirement</a></li>
+        
+    
+        <li class="main "><a href="#82-steps">8.2 Steps</a></li>
+        
+    
+        <li class="main "><a href="#83-notes">8.3 Notes</a></li>
+        
+    
+        <li class="main "><a href="#91-hardware-requirement">9.1 Hardware Requirement</a></li>
+        
+    
+        <li class="main "><a href="#92-steps">9.2 Steps</a></li>
+        
+    
+        <li class="main "><a href="#10-misc">10 Misc.</a></li>
         
     
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="welcome-to-ximmerse-documentation">Welcome to Ximmerse Documentation</h1>
-<p>For more info about us, visit <a href="http://www.ximmerse.com/">ximmerse.com</a>.</p>
-<h2 id="commands">Commands</h2>
+<div align=right><img src="imgs/xim.png"></div>
+
+<p><center>
+<h1>Ximmerse SDK for Unity3D (v2.0.1)</h1>
+</center></p>
+<!---|Document Number:  |`<Feature Identifier>`| --->
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Document Status:</td>
+<td>Release</td>
+</tr>
+<tr>
+<td>Document Issue Number:</td>
+<td>2.0.1</td>
+</tr>
+<tr>
+<td>Issue Date:</td>
+<td>2016-04-01</td>
+</tr>
+<tr>
+<td>Security Status:</td>
+<td>Public</td>
+</tr>
+<tr>
+<td>Author:</td>
+<td>YouSing Huang, Yongtao Hu, Jingwen Dai</td>
+</tr>
+<tr>
+<td>_ _ _</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>&copy; 2015 XIMMERSE
+All rights reserved</p>
+<p><strong>UNCONTROLLED COPY</strong>: The master of this document is stored on an electronic database and is “write protected”; it may be altered only by authorized persons. While copies may be printed, it is not recommended. Viewing of the master electronically ensures access to the current issue. Any hardcopies taken must be regarded as uncontrolled copies.</p>
+<!---**XIMMERSE CONFIDENTIAL**: The information contained in this document is the property of Ximmerse. Except as expressly authorized in writing by Ximmerse, the holder shall keep all information contained herein confidential, shall disclose the information only to its employees with a need to know, and shall protect the information from disclosure and dissemination to third parties.  Except as expressly authorized in writing by Ximmerse, the holder is granted no rights to use the information contained herein.  If you have received this document in error, please notify the sender and destroy it immediately.--->
+
+<hr />
+<p><strong>Update History</strong>
+- 04/01/2016: SDK v2.0.1 released. Add Native Android SDK.
+- 02/21/2016: SDK v2.0 released. Support Google Cardboard.
+- 01/23/2016: Support Windows 10.
+- 12/30/2015: Native C++ SDK is released.
+- 12/16/2015: Add "Developing with PC (Windows)" chapter.
+- 12/01/2015: SDK v1.0 released.</p>
+<h2 id="1-release-statement">1 Release Statement</h2>
+<h3 id="11-foreword">1.1 Foreword</h3>
+<p><!---As our hardware are still in the development iteration stage, this SDK should be only used for reference, i.e. it only works well with the product prototype. The purpose of this SDK is to help developers to explorer different interaction styles. Our formal SDK will be released after the shipment of Development Kit (DK v1.0). --->
+This SDK is designed mainly for Unity3D Engine. In future, we will provide support for other developing environments.</p>
+<h3 id="12-development-overview">1.2 Development Overview</h3>
+<blockquote>
+<p>Please check the <a href="https://www.youtube.com/watch?v=2wMl7DIoO-8">Open Box Test Video</a> to make sure the X-Hawk and X-Cobra work properly. More demos and tools for validating our devices can be found <a href="#tools">here</a>.</p>
+</blockquote>
+<ol>
+<li><kbd>X-Hawk</kbd> + <kbd>X-Cobra</kbd> + <kbd>Gear VR</kbd>
+    Please refer to <a href="#anchor-develop-with-gear-vr">8 Developing with Gear VR</a> of this Doc for details.</li>
+<li><kbd>X-Hawk</kbd> + <kbd>X-Cobra</kbd> + <kbd>PC</kbd> with Unity
+    Please refer to <a href="#anchor-develop-with-pc">9 Developing with PC (Windows)</a> of this Doc for details.</li>
+<li><kbd>X-Hawk</kbd> + <kbd>X-Cobra</kbd> + <kbd>PC</kbd> with Native C++
+    Please refer to <a href="https://github.com/Ximmerse/SDK/blob/master/Native%20C%2B%2B">here</a> for details.</li>
+<li><kbd>X-Cobra / X-Swift</kbd> + <kbd>Bluetooth USB Adapter</kbd> + <kbd>PC</kbd> with Unity
+    Please refer to <a href="#anchor-inputtest-cobra">6.1.3 InputTest (X-Cobra)</a> and <a href="#anchor-inputtest-swift">6.1.4 InputTest (X-Swift)</a> of this Doc for details.</li>
+<li><kbd>X-Hawk</kbd> + <kbd>X-Cobra</kbd> + <kbd>Google Cardboard</kbd>
+    Please refer to <a href="#anchor-cardboard">7 Developing with Google Cardboard</a> for details.</li>
+<li><kbd>X-Cobra / X-Swift</kbd> + <kbd>Google Cardboard</kbd>
+    Please refer to <a href="#anchor-cardboard-bluetooth">7.4 Connect Ximmerse Devices via Bluetooth in Android</a> for details.</li>
+</ol>
+<h3 id="13-test-environment">1.3 Test Environment</h3>
 <ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs help</code> - Print this help message.</li>
+<li>Operating System (OS): Windows 7/8/10 PC</li>
+<li>Unity3D Engine: Unity v5.1.3f1 (32-bit)</li>
 </ul>
-<h2 id="project-layout">Project layout</h2>
-<pre><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
-</code></pre></div>
+<h3 id="14-notes">1.4 Notes</h3>
+<ol>
+<li>This SDK does not support Linux or Mac OS X, please develop using Windows (PC).</li>
+<li>You can use other versions of Unity3D. However, versions 4.X are not verified or technically supported.</li>
+<li>It is recommended to use Versions 5.X due to its support for VR.</li>
+<li>In terms of compatibility or script update issues for different versions of Unity3D, it is recommended to use preprocessor macros.</li>
+</ol>
+<h3 id="15-technical-support">1.5 Technical Support</h3>
+<ul>
+<li>Email: <a href="mailto:support@ximmerse.com">support@ximmerse.com</a></li>
+</ul>
+<hr />
+<h2 id="2-sdk-setup">2 SDK Setup</h2>
+<h3 id="21-import-resource-package">2.1 Import Resource Package</h3>
+<ol>
+<li>In an empty Unity project, click Unity menu <code>Assets</code> $\rightarrow$ <code>Import Package</code> $\rightarrow$ <code>Custom Package...</code>
+    <div align = center><img src="imgs/Assets.png"></div></li>
+<li>In the file selection dialog, select <code>Ximmerse SDK 2.0.unitypackage</code>.
+    <div align = center><img src="imgs/FileDialog.png"></div></li>
+<li>In <code>Importing package</code>, click <code>Import</code>.
+    <div align = center><img src="imgs/ImportingPackage.png"></div></li>
+<li>Done! There will be two folders named <code>Plugins</code> and <code>Ximmerse SDK</code> under folder <code>$(ProjectDir)/Assets</code>.
+    <div align = center><img src="imgs/Project.png"></div></li>
+</ol>
+<h3 id="22-setup-ximmerse-sdk-under-vr-hmd-sdk">2.2 Setup Ximmerse SDK under VR HMD SDK</h3>
+<blockquote>
+<p>Note: We will take <strong>Unity VR</strong> as an example. Please make sure that your Unity version supports VR mode, i.e. v5.1.0+.</p>
+</blockquote>
+<ol>
+<li>Click Unity menu <code>File</code> $\rightarrow$ <code>Build Settings...</code>
+    <div align = center><img src="imgs/File.png"></div></li>
+<li>In <code>Build Settings</code>, click <code>Player Settings...</code>.
+    <div align = center><img src="imgs/BuildSettings.png"></div></li>
+<li>In <code>Inspector</code> view $\rightarrow$ <code>Settings for PC, Mac &amp; Linux Standalone</code> tab $\rightarrow$ check the <code>Virtual Reality Supported</code> checkbox.
+    <div align = center><img src="imgs/Settings.png"></div></li>
+<li>Click Unity menu <code>File</code> $\rightarrow$ <code>New Scene</code>, to create a scene.
+    <div align = center><img src="imgs/File2.png"></div></li>
+<li>Click Unity menu <code>GameObject</code> $\rightarrow$ <code>Create Empty</code> to add a object and rename it to <code>VRCameraRig</code>.</li>
+<li>Drag <code>Main Camera</code> under <code>VRCameraRig</code> to make <code>VRCameraRig</code> as <code>Main Camera</code>'s parent.
+    <div align = center><img src="imgs/VRCameraRig.png"></div></li>
+<li>Reset <code>Main Camera</code>'s transform.
+    <div align = center><img src="imgs/ResetTransform.png"></div></li>
+<li>Select <code>VRCameraRig</code> $\rightarrow$ click <code>Add Component</code> $\rightarrow$ select <code>VRContext</code>.
+    <div align = center><img src="imgs/AddComponent.png"></div></li>
+<li>Config <code>Tracking Space</code> to <code>VRCameraRig</code> and <code>Center Eye Anchor</code> to <code>Main Camera</code>.
+    <div align = center><img src="imgs/SetAnchors.png"></div></li>
+<li>In <code>Project Browser</code> $\rightarrow$ <code>Assets</code> $\rightarrow$ <code>Ximmerse SDK</code> $\rightarrow$ <code>Prefabs</code> $\rightarrow$ <code>Input</code> $\rightarrow$ drag the prefabs named <code>_CrossInput</code> to the <code>Hierarchy</code> view to instantiate it.
+    <div align = center><img src="imgs/Project2.png"></div></li>
+</ol>
+<h3 id="23-input-setup-for-ximmerse-hardwares">2.3 Input Setup for Ximmerse Hardwares</h3>
+<p>As shown in the following figure, right boxes are for left hand X-Cobra setup and blue boxes for right hand X-Cobra. <code>Controller Formats</code> are the format registered to <code>CrossInputManager</code> and <code>Map Settings</code> are the mapping setup.</p>
+<div align = center><img src="imgs/Xim3.png"></div>
+
+<p>Elements' names can be modified in <code>Map Settings</code>. Take left hand X-Cobra as an example by double clicking <code>X-Hawk Alpha 0 (Left) (XHawkMapSetting)</code>, buttons on the both sides of the left hand X-Cobra can be setup for switching weapons by changing <code>Button[1]</code> and <code>Button[3]</code> to <code>Prev Weapon</code> and <code>Next Weapon</code> accordingly.</p>
+<div align = center><img src="imgs/SetupXCobra.png"></div>
+
+<p>In the script, the code for setup switch weapons is:</p>
+<pre><code class="cpp">void Update() {
+    if(CrossInputManager.GetButtonDown(&quot;Left_Prev Weapon&quot;)){
+        // Use Prev Weapon...
+    }else if(CrossInputManager.GetButtonDown(&quot;Left_Next Weapon&quot;)){
+        // Use Next Weapon...
+    }
+}
+</code></pre>
+
+<h3 id="24-programming">2.4 Programming</h3>
+<h4 id="241-access-axes-and-buttons">2.4.1 Access Axes and Buttons</h4>
+<ol>
+<li>Import <code>Ximmerse.CrossInput</code> namespace.
+    <code>cpp
+    using Ximmerse.CrossInput;</code></li>
+<li>
+<p>Access the <code>Horizontal</code> axis of left joystick and the <code>Vertical</code> axis of right joystick.
+    <code>cpp
+    float left_h  =CrossInputManager.GetAxis("Left_Horizontal");
+    float right_v =CrossInputManager.GetAxis("Right_Vertical");</code></p>
+<p>These information can also be obtained by <code>VirtualController</code> as follows, which are equivalent to the above functions.</p>
+<p><code>cpp
+float left_h  =VirtualController.controllers[0].GetAxis("Horizontal");
+float right_v =VirtualController.controllers[1].GetAxis("Vertical");</code>
+3. Access the <code>Fire1</code> button of left joystick and the <code>Jump</code> button of right joystick.
+```cpp
+if(CrossInputManager.GetButtonDown("Left_Fire1")) {
+    // Let's fire...
+}</p>
+<p>if(CrossInputManager.GetButtonDown("Right_Jump")){
+    // Let's jump...
+}
+```</p>
+<p>Similarly, these information can also be obtained by <code>VirtualController</code> as follows, which are equivalent to the above functions.</p>
+<p>```c
+if(VirtualController.controllers[0].GetButtonDown("Fire1")){
+    // Let's fire...
+}</p>
+<p>if(VirtualController.controllers[1].GetButtonDown("Jump")){
+    // Let's jump...
+}
+```</p>
+</li>
+</ol>
+<h4 id="242-access-position-and-rotation">2.4.2 Access Position and Rotation</h4>
+<p>Taking the sample script <code>HandController.cs</code> under folder <code>$(ProjectDir)/Assets/Ximmerse SDK/Scenes/Example</code> as an example:
+<div align = center><img src="imgs/Assets2.png"></div></p>
+<ol>
+<li>Import <code>Ximmerse.CrossInput</code> namespace.
+    <code>cpp
+    using Ximmerse.CrossInput;</code></li>
+<li>
+<p>Obtain the reference of <code>VirtualPose</code> by <code>CrossInputManager.VirtualPoseReference(poseName)</code>.
+    <code>cpp
+    m_Pose=CrossInputManager.VirtualPoseReference(poseName);</code></p>
+<p>The properties and fields of <code>VirtualPose</code> are as follows:
+```cpp
+public class VirtualPose:SmartPointer{
+    public string name{
+        get;
+        private set;
+    }
+    public bool matchWithInputManager {
+        get;
+        private set;
+    }</p>
+<pre><code>public bool active=true;
+public int id;
+
+public Vector3 position;
+public Quaternion rotation;
+
+...
+</code></pre>
+<p>}
+<code>3. Set `position` and `rotation` of `Transform` to be `position` and `rotation` of `VirtualPose` in functions like `MonoBehaviour.FixedUpdate()`.</code>cpp
+/// <summary>
+///
+/// </summary>
+protected virtual void FixedUpdate(){
+    //
+    m_HandTrans.position=m_Pose.position;
+    m_HandTrans.rotation=m_Pose.rotation;
+}
+```</p>
+</li>
+</ol>
+<hr />
+<h2 id="3-ximmersecore-namespace">3 Ximmerse.Core Namespace</h2>
+<h3 id="31-overview">3.1 Overview</h3>
+<p>This namespace is used for accessing the APIs of Ximmerse's hardwares. As our beta versions are still in a fast iteration stage, there will be different versions for the supported hardware. Please pay attention to what your DK version is. Though there will be big changes for this namespace, it should be OK to use Ximmerse hardwares with general software as long as the name and address of the equipment are set properly. Note that in most cases, you will not need to access this namespace. In terms of input interfaces, you only need to access <code>Ximmerse.CrossInput</code>. You can also apply Razer's Hydra in developing as <code>Ximmerse.CrossInput</code> is a compatible input solution.</p>
+<h3 id="32-legacy-interface">3.2 Legacy Interface</h3>
+<p>In Unity, Ximmerse's joystick (X-COBRA) is abstracted as <code>DeviceBase</code>. Information related to the Ximmerse's joystick (e.g. axes, buttons, triggers and IMU) is abstracted as <code>SensorBase</code>.</p>
+<p>Prefabs should set up automatically in the SDK. Developers only need to set the corresponding config file under folder <code>project_folder/Ximmerse SDK/Resources/Configs/</code> in order to setup Ximmerse's X-COBRA after the formal release.</p>
+<p><code>DeviceName</code> is the device number. Please refer to the <code>txt</code> file under the crossponding samples.</p>
+<p><code>DeviceAddress</code> is the serial port address under Windows, which is the Bluetooth address under Android.</p>
+<p><code>FmtJoy</code> refers to the character string of the input formatted key. For example, key <code>"Fire1"</code> will be formatted to <code>"Left_ Fire1"</code> in <code>CrossInputManager</code> (under <code>Ximmerse.CrossInput</code> namespace) when joystick's <code>FmtJoy</code> is <code>"Left_{0}"</code>.
+<div align = center><img src="imgs/DeviceBase.png"></div></p>
+<p>Remarks:
+- Config files are located under folders below:
+    - Unity editor: <code>project_folder/Ximmerse SDK/Resources/Configs/</code>
+    - Windows release version: <code>release_folder/release_folder_Data/StreamingAssets/Configs/</code>
+    - Android release version: <code>Android_SD_card_root_folder/Ximmerse Runtime/Configs/</code></p>
+<h3 id="33-x-hawk-sdk">3.3 X-Hawk SDK</h3>
+<p>If only using X-Hawk, it is recommended to use new X-Hawk SDK under path <code>${ProjectDir}\Assets\Ximmerse SDK\Scripts\Core\X-Hawk SDK</code> (wrapper of C++ SDK), within which <code>XHawkInput</code> is similar to <code>SixenseInput</code> in Hydra joystick SDK and <code>XHawkInputManager</code> is the wrapper of <code>XHawkInput</code> in <code>CrossInput</code> system.</p>
+<h3 id="34-misc">3.4 Misc.</h3>
+<p>Please refer to <code>${ProjectDir}\Assets\Ximmerse SDK\Scenes\InputTest</code> for details of different input scenes.</p>
+<hr />
+<h2 id="4-ximmersecrossinput-namespace">4 Ximmerse.CrossInput Namespace</h2>
+<h3 id="41-overview">4.1 Overview</h3>
+<p><strong>Compatible solution for multiple input.</strong> <code>CrossInputManager</code> is the access entry point, which is modified from the official sample <code>UnityStandardAssets.CrossPlatformInput</code>. In order to run <code>Ximmerse.CrossInput</code> successfully, <code>GameObject</code> with <code>CrossInputManager</code> component (whose properties source list should also be set up properly) should be added to the game scene.</p>
+<blockquote>
+<p>Tip: You can turn off <code>CrossInputManager</code>'s <code>useCrossInput</code> before running so that <code>CrossInputManager</code> will use the embedded input APIs of Unity.</p>
+</blockquote>
+<p>On the other hand, you can customize other input solutions, such as Razer's Hydra, Xbox 360 controller or Ximmerse's joystick (X-COBRA). Instead of writing different access interfaces for different input solutions, you only need to access the static functions of <code>CrossInputManager</code>.</p>
+<p>For example, assuming you want to acquire the status of the joystick and button (pressed or not), you will need to call <code>Input.GetAxis(axisName)</code> and <code>Input.GetButton(buttonName)</code> in native Unity programming. With <code>Ximmerse.CrossInput</code> input system, they can be easily replaced by <code>CrossInputManager.GetAxis(axisName)</code> and <code>CrossInputManager.GetButton(buttonName)</code>.</p>
+<p>Current input solutions can be divided into two categories: traditional controllers (keyboard &amp; mouse and joystick) and motion controllers (with position and orientation in space). With <code>Ximmerse.CrossInput</code>, motion sensing input is abstracted as <code>VirtualPose</code> class (with position and orientation in space). You can obtain the reference of the <code>VirtualPose</code> by simply calling <code>CrossInputManager.VirtualPoseReference(name)</code>.</p>
+<blockquote>
+<p>Tip: In the <code>UnityStandardAssets.CrossPlatformInput</code> sample, joystick and button are abstracted as <code>VirtualAxis</code> and <code>VirtualButton</code>. Please refer to the <a href="#extension">Extensions</a> section on how to extend <code>Ximmerse.CrossInput</code>.</p>
+</blockquote>
+<p>In this SDK, the full preset hierarchy is as follows. To disable one particular input component, simply set <code>GameObject</code>'s <code>active</code> to <code>false</code> on the respective script.
+<div align = center>
+<img src="imgs/CrossInputManager.png"> <img src="imgs/CrossInput.png">
+</div></p>
+<h3 id="42-selected-classes-introduction">4.2 Selected Classes Introduction</h3>
+<h4 id="421-crossinputmanager">4.2.1 CrossInputManager</h4>
+<p><strong>Input manager, similar to <code>UnityStandardAssets.CrossPlatformInput</code>.</strong>
+The related input APIs of <code>CrossPlatformInputManager</code> are as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Return Type</th>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Boolean</code></td>
+<td><code>AxisExists(String)</code></td>
+<td>return true while the virtual axis identified by given string exists</td>
+</tr>
+<tr>
+<td><code>Boolean</code></td>
+<td><code>ButtonExists(String)</code></td>
+<td>return true while the virtual button identified by given string exists</td>
+</tr>
+<tr>
+<td><code>Single</code></td>
+<td><code>GetAxis(String)</code></td>
+<td>return the value of the virtual axis identified by given string</td>
+</tr>
+<tr>
+<td><code>Single</code></td>
+<td><code>GetAxisRaw(String)</code></td>
+<td>return the value of the virtual axis identified by given string with no smoothing filtering applied</td>
+</tr>
+<tr>
+<td><code>Boolean</code></td>
+<td><code>GetButton(String)</code></td>
+<td>return true while the virtual button identified by given string is held down</td>
+</tr>
+<tr>
+<td><code>Boolean</code></td>
+<td><code>GetButtonDown(String)</code></td>
+<td>return true during the frame the user pressed down the virtual button identified by given string</td>
+</tr>
+<tr>
+<td><code>Boolean</code></td>
+<td><code>GetButtonUp(String)</code></td>
+<td>return true the first frame the user releases the virtual button identified by given string</td>
+</tr>
+<tr>
+<td><code>Boolean</code></td>
+<td><code>PoseExists(String)</code></td>
+<td>return true while the virtual pose identified by given string exists</td>
+</tr>
+<tr>
+<td><code>Vector3</code></td>
+<td><code>GetPosePosition(String)</code></td>
+<td>return the value of the position in the space identified by given string</td>
+</tr>
+<tr>
+<td><code>Quaternion</code></td>
+<td><code>GetPoseRotation(String)</code></td>
+<td>return the value of the rotation in the space identified by given string</td>
+</tr>
+<tr>
+<td><code>Void</code></td>
+<td><code>RegisterVirtualAxis(VirtualAxis)</code></td>
+<td>register one virtual axis to CrossInputManager</td>
+</tr>
+<tr>
+<td><code>Void</code></td>
+<td><code>RegisterVirtualButton(VirtualButton)</code></td>
+<td>register one virtual button to CrossInputManager</td>
+</tr>
+<tr>
+<td><code>Void</code></td>
+<td><code>RegisterVirtualPose(VirtualPose)</code></td>
+<td>register one virtual pose to CrossInputManager</td>
+</tr>
+<tr>
+<td><code>Void</code></td>
+<td><code>SetAxis(String,Single)</code></td>
+<td>set the value of the axis identified by given string</td>
+</tr>
+<tr>
+<td><code>Void</code></td>
+<td><code>SetAxisNegative(String)</code></td>
+<td>set the value of the axis identified by given string to -1</td>
+</tr>
+<tr>
+<td><code>Void</code></td>
+<td><code>SetAxisPositive(String)</code></td>
+<td>set the value of the axis identified by given string to 1</td>
+</tr>
+<tr>
+<td><code>Void</code></td>
+<td><code>SetAxisZero(String)</code></td>
+<td>set the value of the axis identified by given string to 0</td>
+</tr>
+<tr>
+<td><code>Void</code></td>
+<td><code>SetButtonDown(String)</code></td>
+<td>set the virtual button identified by given string to be held down</td>
+</tr>
+<tr>
+<td><code>Void</code></td>
+<td><code>SetButtonUp(String)</code></td>
+<td>set the virtual button identified by given string to be released</td>
+</tr>
+<tr>
+<td><code>Void</code></td>
+<td><code>SetPose(String,Vector3,Quaternion)</code></td>
+<td>set the value of the pose identified by given string</td>
+</tr>
+<tr>
+<td><code>Void</code></td>
+<td><code>SetPosePosition(String,Vector3)</code></td>
+<td>set the value of the position identified by given string</td>
+</tr>
+<tr>
+<td><code>Void</code></td>
+<td><code>SetPoseRotation(String,Quaternion)</code></td>
+<td>set the value of the rotation identified by given string</td>
+</tr>
+<tr>
+<td><code>Void</code></td>
+<td><code>SetVirtualMousePositionX(Single)</code></td>
+<td>set the value of x-axis of the virtual mouse</td>
+</tr>
+<tr>
+<td><code>Void</code></td>
+<td><code>SetVirtualMousePositionY(Single)</code></td>
+<td>set the value of y-axis of the virtual mouse</td>
+</tr>
+<tr>
+<td><code>Void</code></td>
+<td><code>SetVirtualMousePositionZ(Single)</code></td>
+<td>set the value of z-axis of the virtual mouse</td>
+</tr>
+<tr>
+<td><code>Void</code></td>
+<td><code>UnRegisterVirtualAxis(VirtualAxis)</code></td>
+<td>un-register one virtual axis</td>
+</tr>
+<tr>
+<td><code>Void</code></td>
+<td><code>UnRegisterVirtualButton(VirtualButton)</code></td>
+<td>un-register one virtual button</td>
+</tr>
+<tr>
+<td><code>Void</code></td>
+<td><code>UnRegisterVirtualPose(VirtualPose)</code></td>
+<td>un-register one virtual pose</td>
+</tr>
+<tr>
+<td><code>VirtualAxis</code></td>
+<td><code>VirtualAxisReference(String)</code></td>
+<td>return the reference of the virtual axis identified by given string</td>
+</tr>
+<tr>
+<td><code>VirtualAxis</code></td>
+<td><code>VirtualAxisReference(Object,String,Boolean)</code></td>
+<td>return the reference of the virtual axis identified by given string</td>
+</tr>
+<tr>
+<td><code>VirtualButton</code></td>
+<td><code>VirtualButtonReference(String)</code></td>
+<td>return the reference of the virtual button identified by given string</td>
+</tr>
+<tr>
+<td><code>VirtualButton</code></td>
+<td><code>VirtualButtonReference(Object,String,Boolean)</code></td>
+<td>return the reference of the virtual button identified by given string</td>
+</tr>
+<tr>
+<td><code>VirtualPose</code></td>
+<td><code>VirtualPoseReference(String)</code></td>
+<td>return the reference of the virtual pose identified by given string</td>
+</tr>
+<tr>
+<td><code>VirtualPose</code></td>
+<td><code>VirtualPoseReference(Object,String,Boolean)</code></td>
+<td>return the reference of the virtual pose identified by given string</td>
+</tr>
+</tbody>
+</table>
+<p>Remarks:
+1. A mouse's axis information can be obtained by <code>CrossInputManager.mousePosition</code>. Due to poor user experience, it is not recommended to use traditional mouse as VR input.
+2. Alike <code>UnityEngine.Input</code>, <code>CrossInputManager</code>'s interface can only be accessed in <code>MonoBehaviour.Update()</code>.
+3. The priority of <code>CrossInputManager</code> script should be set higher than the normal ones in order to make sure input can be written to <code>CrossInputManager</code>'s cache while being called. This can be set in <code>Edit</code>$\rightarrow$<code>Project Settings</code>$\rightarrow$<code>Script Execution Order</code>:
+<div align = center><img src="imgs/Inspector.png"></div></p>
+<h4 id="422-unityinput">4.2.2 UnityInput</h4>
+<p>You can write the embedded input of Unity to <code>CrossInputManager</code>'s input cache. The embedded input of Unity can be further obtained through <code>CrossInputManager</code>.
+<div align = center><img src="imgs/UnityInput.png"></div></p>
+<h4 id="423-virtualcontroller">4.2.3 VirtualController</h4>
+<p><strong>Input interface to distinguish left and right hands.</strong> It's not easy to distinguish left and right hands as strings are used as keys in <code>CrossInputManager</code>. With the handy accessor <code>VirtualController</code>, developers can use formatted strings and the string arrays of input keys to instantiate an instance. Input can be accessed by <code>VirtualController.GetAxis(axisName)</code> and <code>VirtualController.GetButton(buttonName)</code>. Please refer to the following example:</p>
+<pre><code class="cpp">string[] joystickFmts=new string[2]{&quot;j0_{0}&quot;,&quot;j1_{0}&quot;}; // joystick list
+string[] axes=new string[2]{&quot;Horizontal&quot;,&quot;Vertical&quot;}; // axes list
+string[] buttons=new string[4]{&quot;Fire1&quot;,&quot;Fire2&quot;,&quot;Fire3&quot;,&quot;Jump&quot;}; // button list
+VirtualController[] joysticks=new VirtualController[2]{new VirtualController(),new VirtualController()}; // VirtualController list
+
+// initialize VirtualController
+joysticks[0].InitInput(joystickFmts[0],axes,joystickFmts[0],buttons, &quot;&quot;);
+joysticks[1].InitInput(joystickFmts[1],axes,joystickFmts[1],buttons, &quot;&quot;);
+
+// access input through VirtualController
+joysticks[0].GetAxis(&quot;Horizontal&quot;); // use short key &quot;Horizontal&quot;, actual registered key is &quot;j0_Horizontal&quot;
+joysticks[1].GetButtonDown(&quot;Fire1&quot;); // use short key &quot;Fire1&quot;, actual registered key is &quot;j1_Fire1&quot;
+</code></pre>
+
+<h3 id="43-extensions"><a name="extension"></a>4.3 Extensions</h3>
+<p>As mentioned above, different input solutions are abstracted as <code>IInputSource</code> interfaces in SDK. Thus, developers can customize multiple input solutions of their own.
+The interface function of <code>IInputSource</code> is as follows:</p>
+<pre><code class="cpp">public interface IInputSource
+{
+    // Methods
+    int EnterInputFrame();
+    int ExitInput();
+    int ExitInputFrame();
+    int InitInput();
+
+    // Properties
+    bool enabled {get; set;}
+}
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>InitInput()</code></td>
+<td>initialize input source, return 0 if successful</td>
+</tr>
+<tr>
+<td><code>ExitInput()</code></td>
+<td>exit input source and release related sources, return 0 if successful</td>
+</tr>
+<tr>
+<td><code>EnterInputFrame()</code></td>
+<td>enter input frame, write corresponding input information to CrossInputManager's input cache, return 0 if successful</td>
+</tr>
+<tr>
+<td><code>ExitInputFrame()</code></td>
+<td>exit input frame, return 0 if successful</td>
+</tr>
+</tbody>
+</table>
+<p>Remarks:
+1. Input cache refers to the list of <code>VirtualAxis</code>, <code>VirtualButton</code> and <code>VirtualPose</code> of <code>CrossInputManager</code>.
+2. Input frame refers to the time stamp when the program reads the input (<code>MonoBehaviour.Update()</code>).</p>
+<p>In order to run in <code>Ximmerse.CrossInput</code>, it only needs to implement the <code>MonoBehaviour</code> of <code>IInputSource</code>'s interface and add it to the property source list of <code>CrossInputManager</code>.</p>
+<p>Similarly, Razer's Hydra can also be used due to its compatibility with <code>Ximmerse.CrossInput</code> by adding its SDK <code>SixenseUnityPlugin</code> to the project and compatible scipt <code>Sixense Input.cs</code> to <code>CrossInputManager</code>.
+<div align = center><img src="imgs/SixenseInput.png"></div></p>
+<hr />
+<h2 id="5-other-namespaces">5 Other Namespaces</h2>
+<p>Some scripts belong to the Utility class. Demos are available for them where you can edit to fit your needs. Some namespaces belong to low level wrapper of the SDK which in general cases, will not be used in project development.
+There are some other namespaces in this SDK, including:
+- <code>Ximmerse.Animation</code>: for easy implementation of animation solutions, like <code>HandAnimator</code>.
+- <code>Ximmerse.IO</code>: for IO Stream under Windows and Android and wrapper of IO tools class.
+- <code>Ximmerse.UI</code>: for extension of UGUI and the compatible solution of traditional UI and VR UI.</p>
+<hr />
+<h2 id="6-samples">6 Samples</h2>
+<blockquote>
+<p>Note: all samples can be found in folder <code>$(ProjectDir)/Assets/Ximmerse SDK/Scenes/</code>.</p>
+</blockquote>
+<h3 id="61-crossinputmanager-gui">6.1 CrossInputManager GUI</h3>
+<p>This sample can be found in folder <code>$(ProjectDir)/Assets/Ximmerse SDK/Scenes/InputTest</code>, which further contains three samples, i.e. <code>InputTest (X-Hawk)</code>, <code>InputTest (X-Cobra)</code> and <code>InputTest (X-Swift)</code>.</p>
+<h4 id="611-inputtest-x-hawk"><a name="anchor-inputtest-hawk"></a>6.1.1 InputTest (X-Hawk)</h4>
+<p>This sample demonstrates how to obtain the detailed X-Cobra's information (including position, rotation, axis, trigger and buttons, etc.) through X-Hawk. Please refer to <a href="https://github.com/Ximmerse/SDK/tree/master/Tools">2.1 InputTest (X-Hawk)</a> (steps 1-3) of <em>Tools Instructions</em> for detailed setup steps.</p>
+<div align = center><img src="imgs/CrossInputManagerGUI_XHawk.png"></div>
+
+<h4 id="612-inputtest-x-hawk-sdk">6.1.2 InputTest (X-Hawk SDK)</h4>
+<p>Similar to <code>InputTest (X-Hawk)</code>, this sample also demonstrates how to obtain the detailed X-Cobra's information (including position, rotation, axis, trigger and buttons, etc.) through X-Hawk, but shows them in plain text format. Setup steps are same to <a href="#anchor-inputtest-hawk">6.1.1 InputTest (X-Hawk)</a>.</p>
+<div align = center><img src="imgs/CrossInputManagerGUI_XHawkSDK.png"></div>
+
+<h4 id="613-inputtest-x-cobra"><a name="anchor-inputtest-cobra"></a>6.1.3 InputTest (X-Cobra)</h4>
+<p>This sample demonstrates how to obtain the detailed X-Cobra's information (including rotation, axis, trigger and buttons, etc.) through Bluetooth USB adapter plugged in PC. Please refer to <a href="https://github.com/Ximmerse/SDK/tree/master/Tools">2.3 InputTest (X-Cobra)</a> (steps 1-4) of <em>Tools Instructions</em> for detailed setup steps.</p>
+<div align = center><img src="imgs/CrossInputManagerGUI_XCobra.png"></div>
+
+<h4 id="614-inputtest-x-swift"><a name="anchor-inputtest-swift"></a>6.1.4 InputTest (X-Swift)</h4>
+<p>This sample demonstrates how to obtain the detailed X-Swift's information (i.e. rotation) through Bluetooth USB adapter plugged in PC. Please refer to <a href="https://github.com/Ximmerse/SDK/tree/master/Tools">2.4 InputTest (X-Swift)</a> (steps 1-3) of <em>Tools Instructions</em> for detailed setup steps.</p>
+<div align = center><img src="imgs/CrossInputManagerGUI_XSwift.png"></div>
+
+<h3 id="62-handcontroller">6.2 HandController</h3>
+<p>This sample can be found in folder <code>$(ProjectDir)/Assets/Ximmerse SDK/Scenes/Examples</code>, which demonstrates how to obtain the <code>VirtualPose</code> and how to control hand stretches using the trigger value.</p>
+<div align = center><img src="imgs/hand.png"></div>
+
+<h3 id="63-cardboard-test">6.3 Cardboard Test</h3>
+<p>This sample can be found in folder <code>$(ProjectDir)/Assets/Ximmerse SDK/Scenes/Examples</code>, which demonstrates how to visualize X-Cobra's real-time status for Cardboard development. Setup steps are same to <a href="#anchor-inputtest-hawk">6.1.1 InputTest (X-Hawk)</a>.</p>
+<div align = center><img src="imgs/CardboardTest.png"></div>
+
+<h3 id="64-hydratoximmerse">6.4 HydraToXimmerse</h3>
+<p>This sample can be found in folder <code>$(ProjectDir)/Assets/Ximmerse SDK/Scenes/Other Examples</code>, which demonstrates how to quickly transfer a Razer's Hydra project to <code>Ximmerse.CrossInput</code>. Some modifications exist for the interfaces to be accessed.</p>
+<p>If <code>SixenseHands</code> of <code>SixenseInput SDK</code> is used in this sample, the hierarchy will be
+<div align = center><img src="imgs/DirectionalLight.png"></div></p>
+<p>If <code>HydraToXimmerse</code> of this SDK is used in this sample, the hierarchy will be
+<div align = center><img src="imgs/DirectionalLight2.png"></div></p>
+<ol>
+<li>First remove the original <code>SixenseInput</code> and add the preset object of <code>CrossInputManager</code> then, check the <code>As Hand Joystick</code> checkbox of the compatible <code>CrossInput</code>'s <code>SixenseInput</code>, <code>VirtualController</code> thus will create two joystick accessors automatically.
+    <div align = center><img src="imgs/SixenseInput2.png"></div></li>
+<li>Remove <code>SixenseHandsController</code> script and add the parent transform with <code>PoseMover</code> for <code>Hand-Right</code> and <code>Hand-Left</code> to achieve no rotation shift of the <code>Transform</code> controlled by <code>PoseMover</code>, i.e. no rotation for the <code>Transform</code> controlled by <code>PoseMover</code> when the corresponding <code>VirtualPose</code> has no rotation. Meanwhile, set <code>localPosition</code> of <code>Hand-Right</code> and <code>Hand-Left</code> to <code>Vector3.zero</code>.
+    <div align = center>
+    <img alt="" src="./imgs/HandsController.png" />
+    <img alt="" src="./imgs/PoseMover.png" /> <img alt="" src="./imgs/PoseMover2.png" />
+    </div></li>
+<li>Move the left and right pivots of <code>SixenseInput</code> that is compatible to <code>CrossInput</code> to where <code>PoseMover</code> is.
+    <div align = center><img src="imgs/CrossInput2.png"></div></li>
+<li>Modify <code>SixenseHand.cs</code> to import <code>Ximmerse.CrossInput</code> namespace.
+    <code>cpp
+    // &lt;!-- TODO
+    using Ximmerse.CrossInput;
+    // TODO --&gt;</code></li>
+<li>Replace <code>SixenseInput.Controller</code> in the script by <code>VirtualController</code>.
+    <code>cpp
+    // &lt;!-- TODO
+            //public SixenseInput.Controller m_controller = null;
+            public VirtualController m_controller;
+    // TODO --&gt;</code></li>
+<li>Obtain <code>m_controller</code> from <code>VirtualController.controllers</code>, reference 0 for left hand and 1 for right hand.
+    <code>cpp
+    // &lt;!-- TODO
+                    //m_controller = SixenseInput.GetController( m_hand );
+                    m_controller = VirtualController.controllers( (int)m_hand-1 );
+    // TODO --&gt;</code></li>
+<li>When accessing input interface, replace the original <code>SixenseInput</code> function with the <code>VirtualController</code> function of Unity style.
+    <code>cpp
+    // &lt;!-- TODO
+                //if ( m_controller.GetButton(SixenseButtons.ONE) ) {
+                if ( m_controller.GetButton("ONE") ) {
+                    // do something
+                }
+    // TODO --&gt;</code></li>
+<li>Map trigger value to axes and buttons, i.e. <code>VirtualController.GetAxis(triggerName)</code> and <code>VirtualController.GetButton(triggerName)</code>.
+    <code>cpp
+    // &lt;!-- TODO
+                //float fTriggerVal = m_controller.Trigger;
+                float fTriggerVal = m_controller.GetAxis("TRIGGER");
+    // TODO --&gt;</code></li>
+<li>Ensure that <code>triggerName</code> is not a constant. It should be consistent with the crossponding value of <code>Ximmerse.CrossInput.CrossInputManager</code>. It's more convenient to obtain the information of given joystick from multiple ones by replacing the full key of <code>CrossInputManager</code> with short keys.</li>
+</ol>
+<hr />
+<h2 id="7-developing-with-google-cardboard"><a name="anchor-cardboard"></a>7 Developing with Google Cardboard</h2>
+<h3 id="71-sdk-environment-setup"><a name="anchor-cardboard-setup"></a>7.1 SDK Environment Setup</h3>
+<ol>
+<li>Create an empty Unity project.</li>
+<li>Import Cardboard SDK for Unity package <code>CardboardSDKForUnity.unitypackage</code> (can be downloaded from <a href="https://github.com/googlesamples/cardboard-unity/raw/master/CardboardSDKForUnity.unitypackage">here</a>) and Ximmerse SDK 2.0 <code>Ximmerse SDK 2.0.unitypackage</code> to the project.
+    <div align = center>
+    <img src="imgs/ImportXimAndCardboardSDK.png" width="400">
+    </div></li>
+<li>In <code>File</code> menu $\rightarrow$ <code>Build Settings...</code> $\rightarrow$ <code>Player Settings...</code> $\rightarrow$ <code>Settings for PC, Mac &amp; Linux Standalone</code> $\rightarrow$ <code>Other Settings</code> $\rightarrow$ <code>Configuration</code> $\rightarrow$ <code>Scripting Define Symbols</code> $\rightarrow$ add compilation flag <code>CARDBOARD_SDK</code>.
+    <div align = center>
+    <img src="imgs/AddCardboardSDKFlag.png">
+    </div></li>
+<li>In Unity project folder <code>$(ProjectDir)</code> $\rightarrow$ <code>Assets</code> $\rightarrow$ <code>Plugins</code> $\rightarrow$ <code>Android</code> $\rightarrow$ delete file <code>AndroidManifest.xml</code> $\rightarrow$ rename file <code>AndroidManifest_Cardboard.xml</code> to <code>AndroidManifest.xml</code>.</li>
+</ol>
+<h3 id="72-build-apk">7.2 Build APK</h3>
+<p>Note: we will take how to build <a href="https://github.com/Ximmerse/SDK/tree/master/Tools/Mobile"><code>CardboardTest.apk</code></a> as an example.</p>
+<ol>
+<li>Setup SDK environment as described <a href="#anchor-cardboard-setup">above</a>.</li>
+<li>Delete the default game object <code>Main Camera</code> from the scene.</li>
+<li>Menu <code>GameObject</code> $\rightarrow$ <code>Create Empty</code> $\rightarrow$ rename it to <code>Main Camera</code>.</li>
+<li>Drag both <code>Assets\Cardboard\Prefabs\CardboardMain.prefab</code> and <code>Assets\Ximmerse SDK\Prefabs\Input\_CrossInput.prefab</code> to the scene.
+    <div align = center>
+    <img src="imgs/CardboardMainPrefab.png"> <img src="imgs/CrossInputPrefab.png">
+    </div></li>
+<li>Add <code>VR Context</code> component to game object <code>CardboardMain</code> by selecting <code>CardboardMain</code> $\rightarrow$ in <code>Inspector</code> view $\rightarrow$ click <code>Add Component</code> button $\rightarrow$ search and select <code>VR Context</code>. Config <code>Tracking Space</code> to <code>CardboardMain</code> and <code>Center Eye Anchor</code> to <code>Head</code> or <code>Main Camera</code>.
+    <div align = center>
+    <img src="imgs/SetAnchors2.png">
+    </div></li>
+<li>Add reset buttons <code>Left_Start</code> and <code>Right_Start</code> to <code>VR Context</code>.
+    <div align = center>
+    <img src="imgs/VRContext.png">
+    </div></li>
+<li>Drag <code>pf_x_cobra_00.prefab</code> and <code>pf_x_cobra_01.prefab</code> under <code>Assets\Ximmerse SDK\Prefabs\Input</code> to the scene.
+    <div align = center>
+    <img src="imgs/PfXCobraPrefab.png">
+    </div></li>
+<li><em>(optional)</em> Modify camera components <code>Main Camera</code>, <code>Main Camera Left</code> and <code>Main Camera Right</code> by selecting them (one by one) $\rightarrow$ in <code>Inspector</code> view $\rightarrow$ <code>Camera</code> $\rightarrow$ <code>Clear Flags</code> $\rightarrow$ select <code>Skybox</code>, then set <code>Clipping Planes</code>'s <code>Near</code> to <code>0.01</code>.
+    <div align = center>
+    <img src="imgs/Skybox.png">
+    </div></li>
+<li><em>(optional)</em> <code>_CrossInput</code> $\rightarrow$ <code>_XimInput</code> $\rightarrow$ <code>X-Hawk</code> $\rightarrow$ in <code>Inspector</code> view $\rightarrow$ <code>X Hawk Input Manager (Script)</code> $\rightarrow$ modify <code>Sensitivity</code> to change the scaling values of lighting blobs, or <code>CardboardMain</code> $\rightarrow$ <code>Head</code> $\rightarrow$ <code>Main Camera</code> $\rightarrow$ <code>Pivot</code> $\rightarrow$ in <code>Inspector</code> view $\rightarrow$ modify <code>Transform</code> to change the space transform of lighting blobs.
+    <div align = center>
+    <img src="imgs/Sensitivity.png"> <img src="imgs/Transform.png">
+    </div></li>
+<li>Generate APK by clicking menu <code>File</code> $\rightarrow$ <code>Build Settings...</code> $\rightarrow$ <code>Android</code> $\rightarrow$ check on options <code>Development Build</code> and <code>Autoconnect Profiler</code> $\rightarrow$ <code>Build</code>.
+    &gt; Note:
+    &gt; 1. If it asks to search for the Android SDK when building, you will ned to specify the Android SDK root folder in the file dialog:
+    &gt;   <img alt="" src="./imgs/FileDialog2.png" />
+    &gt;   - If you haven't downloaded Android SDK yet, you can download it from <a href="http://developer.android.com/sdk/index.html#Other">here</a>, e.g. <code>installer_r24.4.1-windows.exe</code>.
+    &gt;   - If it further complains that the Android SDK is outdated, you will need to manually update it by going into its installed root folder $\rightarrow$ run <code>SDK Manager.exe</code> $\rightarrow$ install a newer version Android SDK Build Tools, e.g. <code>v21.1.2</code>:
+    &gt;       <img alt="" src="./imgs/SDKOutdated.png" /> <img alt="" src="./imgs/SDKUpdate.png" /> <img alt="" src="./imgs/SDKUpdate2.png" />
+    &gt; 2. If it complains that Bundle Identifier has not been set up correctly, you will need to modify the Bundle Indentifier accordingly, e.g. <code>com.Xim.CardboardTest</code>:
+    &gt;   <img alt="" src="./imgs/BundleIdentifier.png" /> <img alt="" src="./imgs/BundleIdentifier2.png" /></li>
+</ol>
+<h3 id="73-run-apk"><a name="anchor-run-apk"></a>7.3 Run APK</h3>
+<p>There are two ways to run it:
+1. Run it as default applications. After this, the application will run automatically when plugin Android phone to X-Hawk. Steps:
+    1. <a name="anchor-run-APK"></a>Connect the X-Hawk's USB Connector port B to the Android phone. Wait until <kbd>Choose an app for the USB device</kbd> dialog pops up. Note that all the available apps that use Ximmerse SDK will be displayed here.
+        <div align = center><img src="imgs/App.png"></div></p>
+<pre><code>    &gt; Tip:
+    &gt; 1. Similar to above, if the X-Hawk in your hand is the latest version with a LED indicator, after this step, it will stop breathing (blinking) and remain lighted.
+    &gt; 2. If the &lt;kbd&gt;Choose an app for the USB device&lt;/kbd&gt; dialog does not pop up after a while or another app that you do not want launches automatically,  you will need to clear the cache of the previous apps that use Ximmerse SDK. This can be done in `Settings` $\rightarrow$ `Device` $\rightarrow$ `Applications` $\rightarrow$ `Default applications` $\rightarrow$ `Clear defaults` $\rightarrow$ `CLEAR`.
+    &gt;   &lt;div align = center&gt;&lt;img src="imgs/Clear.png"&gt;&lt;/div&gt;
+
+2. Seleck `Toy Brick` and click the `ALWAYS` option to continue. You will be able to see the  demo running on the Android phone.
+    &lt;div align = center&gt;&lt;img src="imgs/App2.png"&gt;&lt;/div&gt;
+    &lt;div align = center&gt;&lt;img src="imgs/CardboardTest.png"&gt;&lt;/div&gt;
+</code></pre>
+<ol>
+<li>
+<p>After APK runs, manually click the <code>OK</code> button in the dialog.</p>
+<blockquote>
+<p>Note: The first running style can be disabled by removing or commenting out the following code segment of file <code>${ProjectDir}\Assets\Plugins\Android\AndroidManifest_Cardboard.xml</code> and merge it to <code>AndroidManifest.xml</code> file of the project.
+  <img alt="" src="./imgs/DisableRunAPK.png" /></p>
+</blockquote>
+</li>
+</ol>
+<h3 id="74-connect-ximmerse-devices-via-bluetooth-in-android"><a name="anchor-cardboard-bluetooth"></a>7.4 Connect Ximmerse Devices via Bluetooth in Android</h3>
+<p>Ximmerse Devices including X-Cobra and X-Swift can be connected via Bluetooth in Android.</p>
+<p>Steps: <em>(You can also refer to our <a href="https://www.youtube.com/watch?v=14m5beCGDyI">Bluetooth Connect Tutorial Video</a> for demonstration)</em></p>
+<blockquote>
+<p>Note: Make sure to first exit X-Console tool if it is running on PC.</p>
+</blockquote>
+<ol>
+<li>Install <a href="https://github.com/Ximmerse/SDK/raw/master/Tools/Mobile/BTconnect.apk">BTconnect.apk</a>.</li>
+<li>Turn on Bluetooth in Android mobile.</li>
+<li>Turn on X-Cobra and X-Swift that you want to connect.</li>
+<li>Run Bluetooth Setting. Detailed functions are as follows:
+    ① Path of Bluetooth setting file.
+    ② Save current Bluetooth setting.
+    ③ Reload Bluetooth setting.
+    ④ Device name.
+    ⑤ Device Bluetooth address.
+    ⑥ Scan and connect devices.
+    ⑦ Quit application.
+    <div align = center>
+    <img src="imgs/BluetoothSetting.png">
+    </div></li>
+<li>Click <code>Save</code> button to save current Bluetooth setting after setting properly, then click <code>Quit</code> to exit the application.</li>
+<li>Done. Now you should be able to connect and use the corresponding Bluetooth devices in the deployed APKs.</li>
+</ol>
+<hr />
+<h2 id="8-developing-with-gear-vr"><a name="anchor-develop-with-gear-vr"></a>8 Developing with Gear VR</h2>
+<h3 id="81-hardware-requirement">8.1 Hardware Requirement</h3>
+<ol>
+<li>Ximmerse X-Hawk</li>
+<li>Ximmerse X-Cobra</li>
+<li>Ximmerse X-Hawk USB Connector</li>
+<li><a href="http://www.samsung.com/us/support/owners/product/SM-R321NZWAXAR">Gear VR Innovator Edition for S6</a></li>
+<li><a href="http://www.samsung.com/uk/consumer/mobile-devices/smartphones/galaxy-s/SM-G920FZKABTU">Samsung Galaxy S6</a>
+<div align = center>
+<img src="imgs/GEAR_VR_connect.png" width="450" >
+<img src="imgs/Cobra.png" width="700" >
+</div></li>
+</ol>
+<h3 id="82-steps">8.2 Steps</h3>
+<p>We will take <a href="https://github.com/Ximmerse/SDK/raw/master/Demos/Toy%20Brick%20Cardboard.apk">Toy Brick Cardboard APK</a> as an example.</p>
+<blockquote>
+<p>Tip: You can refer to our <a href="https://www.youtube.com/watch?v=TnbLNSe79gc">Gear VR Tutorial Video</a> for demonstration.</p>
+</blockquote>
+<ol>
+<li>Install <a href="https://github.com/Ximmerse/SDK/raw/master/Demos/Toy%20Brick%20Cardboard.apk">Toy Brick Cardboard APK</a> on Galaxy S6.</li>
+<li>
+<p>Turn on developer mode on Galaxy S6. This can be done in <code>Settings</code> $\rightarrow$ <code>Device</code> $\rightarrow$ <code>Applications</code> $\rightarrow$ <code>Application manager</code> $\rightarrow$ <code>Gear AR Service</code> $\rightarrow$ <code>Storage</code> $\rightarrow$ <code>MANAGE STORAGE</code> $\rightarrow$ <code>Developer</code> $\rightarrow$ <code>Developer mode</code>$\rightarrow$ <em>ON</em>.
+    &gt;Tip: If you do not see the <code>Developer mode</code> option in <code>Gear AR Service</code>, tap <code>VR Server Version</code> at least 6 times. By re-entering the dialog, you will be able to see it.</p>
+<p><div align = center><img src="imgs/DeveloperMode.png"></div>
+2. Connect the X-Hawk's USB Connector (the white USB cable) port C to a power bank (make sure power bank is on).
+3. Connect the X-Hawk's USB Connector port A to the X-Hawk.</p>
+<blockquote>
+<p>Tip: If the X-Hawk in your hand is the latest version with a LED indicator, after this step, the LED indicator will first breath (blink) in a lower pace. Wait until it goes into the faster-pace breathing state before going to the next step.
+4. Set application running modes. Please refer to <a href="#anchor-run-apk">7.3 Run APK</a> for details.
+6. Unplug X-Hawk's USB Connector port B from the Galaxy S6 and connect it to the micro USB port of the Gear VR.
+7. Clear all apps running in background of Galaxy 6 and insert it into Gear VR.
+8. <a name="anchor-connect-cobra-to-hawk"></a>Connect X-Cobra to X-Hawk. This can be done by:
+1. Turn on X-Cobra by press its power button.
+2. Put X-Cobra close to X-Hawk. It will be successfully connected once it vibrates. It's recommended to first connect the left hand X-Cobra, then the right one.
+Tip: button combinations of X-Cobra:
+  - Enter calibration mode: hold button [1], [2] and [3] simultaneously for 2 seconds.
+  - <a name="anchor-reset-cobra"></a>Switch/Reset left/right X-Cobras:
+      1. Hold power button for 3 seconds to turn off.
+      2. Hold button [4] and press power button to turn on.
+9. Toy Brick will now launch automatically, or manully press <code>OK</code> button if choosing the second running mode in Step-5.</p>
+</blockquote>
+</li>
+</ol>
+<blockquote>
+<p>Tip: If you want to switch to other apps, you will also need to clear the cache of previous apps that used Ximmerse SDK as mentioned previously.</p>
+</blockquote>
+<h3 id="83-notes">8.3 Notes</h3>
+<p>To develop for Gear VR:
+- Developers will need to register for an OSIG which is a code that is device specific. Then, the OSIG code is inserted into the APK file so that the specific mobile phone can run the APK. If the OSIG code is not in the APK file, the app will NOT be able to run on your mobile phone.
+    &gt; You can find the OSIG generator and full guide here: https://developer.oculus.com/osig/.
+- Another option to get your app available to the public is to have it approved by the Samsung/Oculus Store.</p>
+<hr />
+<h2 id="9-developing-with-pc-windows"><a name="anchor-develop-with-pc"></a>9 Developing with PC (Windows)</h2>
+<h3 id="91-hardware-requirement">9.1 Hardware Requirement</h3>
+<ol>
+<li>Ximmerse X-Hawk
+    <div align = center>
+    <img src="imgs/Hawk.png" width="350" >
+    </div></li>
+<li>Ximmerse X-Cobra
+    <div align = center>
+    <img src="imgs/Cobra.png" width="700" >
+    </div></li>
+<li>Power Cable
+    <div align = center>
+    <img src="imgs/Cabel.png" width="200" >
+    </div></li>
+</ol>
+<h3 id="92-steps">9.2 Steps</h3>
+<ol>
+<li>Connect USB port of Power Cable to PC.</li>
+<li>
+<p>Connect Micro port of Power Cable to X-Hawk.
+    &gt; Tip:
+    &gt; 1. If the X-Hawk in your hand is the latest version with a LED indicator, after this step, the LED indicator will first breath (blink). Wait until it stops breathing (blinking) and remain lighted before going to the next step.
+    &gt; 2. By now, X-Hawk should be connected with PC (Windows) successfully. During the process, no extra driver is needed, which will be automatically installed by Windows after plugging it to PC.
+    &gt; This can be verified via right click <code>Computer</code> $\rightarrow$ <code>Manage</code> $\rightarrow$ <code>Device Manager</code> $\rightarrow$ <code>Human Interface Devices</code>, extra HID-compliant device and USB input device will be added.
+    &gt; <div align = center><img src="imgs/HID.png"></div></p>
+</li>
+<li>
+<p>Replace X-Hawk's mount by Oculus DK2's (Windows version) and install it to Oculus DK2.</p>
+</li>
+<li>Connect X-Cobra to X-Hawk. Please refer to <a href="#anchor-connect-cobra-to-hawk">here</a> for detailed steps.</li>
+<li>
+<p><a name="anchor-unreal-engine"></a>Unreal Engine 4 Development
+    To develop with X-Hawk in Unreal Engine 4, you only need to download Hydra Plugin for Unreal Engine 4 from <a href="https://github.com/getnamo/hydra-ue4">here</a> and replace the <code>sixense.dll</code> by our modified <code>sixense.dll</code>.</p>
+<p>All the Sixense SDK interfaces are the same as Hydra joystick except the following aspects:
+1. The 3D position of the controller is respected to the coordinate system of HMD (Helmet Mounted Display), not the world system.
+2. The pose and rotation of the controller is respected to the world coordinate system, not the base station.
+3. The number of buttons of X-Cobra is less than Hydra joystick. Default mappings are:</p>
+<pre><code>| X-Cobra | Hydra Joystick |
+|--------|--------|
+|   Button [1]    |   Button [ONE]     |
+|   Button [2]    |   Button [START]   |
+|   Button [3]    |   Button [TWO]     |
+|   Button [4]    |   Button [THREE]   |
+
+&gt; Tip: You can re-map buttons by via `sixenseSetButtonRemap()` function of our modified `sixense.dll`, whose description is as follows:
+&gt; ```cpp
+&gt; /* buttons is a 7-int array. It is the button references of X-Cobra that
+&gt;    correspond to Hydra's joystick buttons. If the value of given button
+&gt;    is -1, it means not using X-Cobra button mapping for this button */
+&gt; int sixenseSetButtonRemap(int* buttons);
+&gt; ```
+</code></pre>
+<p>The purpose of using our modified <code>sixense.dll</code> is to access X-Hawk via Sixense SDK interfaces, not to make it fully compatible with Hydra joystick. Please follow the above differences to modify Hydra's SDK.</p>
+</li>
+</ol>
+<hr />
+<h2 id="10-misc">10 Misc.</h2>
+<p>All required files can be downloaded from our <a href="https://github.com/Ximmerse/SDK">SDK github page</a>, including
+1. SDK Unity package: <kbd>Unity $\rightarrow$ Ximmerse SDK 2.0.1.unitypackage</kbd>.
+4. Native C++ SDK: <kbd>Native C++</kbd>. Details can be found <a href="https://github.com/Ximmerse/SDK/tree/master/Native%20C%2B%2B">here</a>.
+3. Native Android SDK: including
+    - <kbd>Native Android $\rightarrow$ Ximmerse Android SDK 1.0.zip</kbd>: Ximmerse Native Android SDK file.
+    - <kbd>Native Android $\rightarrow$ X-Hawk Info.zip</kbd>: An example project to use Ximmerse Native Android SDK to check the status of X-Hawk.
+2. <a name="tools"></a>Tools: including (more info can be found <a href="https://github.com/Ximmerse/SDK/tree/master/Tools">here</a>)
+    - PC Tools
+        - <kbd>Tools $\rightarrow$ PC $\rightarrow$ Tracking_hid.zip</kbd>
+        - <kbd>Tools $\rightarrow$ PC $\rightarrow$ CrossInputManager.zip</kbd>
+        - <kbd>Tools $\rightarrow$ PC $\rightarrow$ X-Console.zip</kbd>
+        - <kbd>Tools $\rightarrow$ PC $\rightarrow$ IMU_cal_tool_V1.zip</kbd>
+    - Mobile Tools
+        - <kbd>Tools $\rightarrow$ Mobile $\rightarrow$ BTconnect.apk</kbd>
+        - <kbd>Tools $\rightarrow$ Mobile $\rightarrow$ CrossInputManager.apk</kbd>
+        - <kbd>Tools $\rightarrow$ Mobile $\rightarrow$ CardboardTest.apk</kbd>
+3. Demos: including (more info can be found <a href="https://github.com/Ximmerse/SDK/tree/master/Demos">here</a>)
+    - <kbd>Demos $\rightarrow$ Toy Brick Cardboard.apk</kbd>
+    - <kbd>Demos $\rightarrow$ Toy Brick GearVR.apk</kbd>
+    - <kbd>Demos $\rightarrow$ Toy Brick (DK2).zip</kbd>
+3. Driver of Bluetooth USB Adapter: <kbd>Driver $\rightarrow$ CSR8510 Bluetooth USB Adapter.zip</kbd>.
+4. Binary files: <kbd>Binary $\rightarrow$ sixense.zip</kbd>.</p></div>
             
         </div>
 
@@ -168,5 +1064,5 @@ docs/
 
 <!--
 MkDocs version : 0.15.3
-Build Date UTC : 2016-08-14 03:55:20.885748
+Build Date UTC : 2016-08-14 04:11:54.336594
 -->
